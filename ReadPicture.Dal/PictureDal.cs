@@ -16,7 +16,7 @@ namespace ReadPicture.Dal
         {
             string sql = "SELECT Id,PictureBinary,MimeType,SeoFilename,AltAttribute,TitleAttribute,IsNew,FastDfsFileName FROM Picture WHERE FastDfsFileName = @FastDfsFileName";
             SqlParameter par = new SqlParameter("@FastDfsFileName", SqlDbType.VarChar, 200);
-            par.Value = fastDfsFileName;
+            par.Value = fastDfsFileName;//
 
             Picture picture = new Picture();
             DataTable dt = SqlHelper.ExecuteDataTable_connSQLServer(sql, par);
